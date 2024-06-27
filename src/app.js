@@ -12,8 +12,8 @@ wss.on("connection", (ws, req) => {
   const clientType = headers[0];
 
 
-  if (clientType === "esp") {
-    const espId = headers[1];
+  if (clientType === "arduino") {
+    const espId = req.headers["x-esp32-id"];
     espClients.set(espId, ws);
 
     ws.on("message", (message) => {
