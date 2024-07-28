@@ -89,7 +89,7 @@
 
       ws.on("message", (message) => {
         const data = JSON.parse(message);
-        const {destination, message} = data;
+        const {destination} = data;
         const espClient = espClients.get(destination);
 
         console.log(`espClient ready state: ${espClient.readyState}`);
