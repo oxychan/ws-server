@@ -39,8 +39,7 @@
 
       backendClient.on("message", (message) => {
         console.log(`Received message from backend: ${message}`);
-
-        console.log(`espClient ready state: ${espClient.readyState}`);
+        
         if (espClient && espClient.readyState === WebSocket.OPEN) {
           espClient.send(message);
         }
